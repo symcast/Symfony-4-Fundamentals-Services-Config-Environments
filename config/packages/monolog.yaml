@@ -1,0 +1,8 @@
+monolog:
+  channels: ['markdown']
+  handlers:
+      markdown_logging:
+          type: stream
+          path: "%kernel.logs_dir%/markdown.log"
+          level: debug
+          channels: ["markdown"]
