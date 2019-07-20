@@ -17,6 +17,18 @@ class ArticleController extends  AbstractController
 {
 
     /**
+     * Currently unused: just showing a controller with a constructor!
+     */
+    private $isDebug;
+
+    public function __construct(bool $isDebug)
+    {
+        $this->isDebug = $isDebug;
+    }
+
+
+
+    /**
      * @Route("/", name="app_homepage")
      */
 
@@ -35,6 +47,10 @@ class ArticleController extends  AbstractController
      */
     public function show($slug, MarkdownHelper $markdownHelper)
     {
+
+        $this->getParameter();
+
+
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
             'Woohoo! I\'m going on an all-asteroid diet!',
